@@ -1,6 +1,7 @@
 headerAnimation();
 sectionLoadAnimation();
 projectsLoadAnimation();
+featureProjLoadAnimation();
 
 
 // DOM - Header dynamics
@@ -65,4 +66,27 @@ function projectsLoadAnimation() {
         card.style.setProperty('--card-index', index);
         observer.observe(card);
     });
+};
+
+function featureProjLoadAnimation() {
+    const wrappers = document.querySelectorAll(".feature-card-wrapper");
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+            };
+        });
+    }, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+    });
+
+    wrappers.forEach((card, index) => {
+        card.style.setProperty('--featured-index', index);
+        observer.observe(card);
+    });
+
 };
