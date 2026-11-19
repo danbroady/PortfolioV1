@@ -424,18 +424,18 @@ header {
 
 /* 01/ About */
 #about-container > h3 {
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 }
 .about-content {
 	display: flex;
 	flex-direction: row;
-	gap: 15px;
+	gap: 40px;
 }
 .about-main {
 	display: flex;
 	flex-direction: column;
 	width: 60%;
-	gap: 25px;
+	gap: 20px;
 }
 #about-desc { 
 	display: flex;
@@ -458,28 +458,154 @@ header {
 	color: var(--accent-colour);
 }
 #timeline-wrapper {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	gap: 25px;
+	padding-left: 20px;
 }
+#timeline-wrapper::before {
+	display: block;
+	position: absolute;
+	top: 5px;
+	left: 0;
+	height: 100%;
+	width: 1px;
+
+	content: ' ';
+	background: linear-gradient(to top, #8892b000, var(--accent-colour));
+}
+
 .timeline-card {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	gap: 8px;
 }
+.timeline-card::before {
+	display: block;
+	position: absolute;
+	top: 4px;
+	left: -23.5px;
+	height: 6px;
+	width: 6px;
+	transform: rotate(45deg);
+
+	border: solid 1px var(--accent-colour);
+	content: ' ';
+	background-color: var(--secondary-bg-colour);
+	transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
 .timeline-card > h5 {
 	font-weight: 450;
 	color: #d4dcdd;
+
+	transition: color 0.4s ease;
 }
 .timeline-card > h5 span {
 	color: var(--text-colour);
-	font-weight: 250;
+	font-weight: 300;
 }
 .timeline-card > p {
 	font-size: 13px;
 }
+.timeline-card:hover h5 {
+	color: var(--accent-colour);
+}
+.timeline-card:hover::before {
+	background-color: var(--accent-colour);
+	box-shadow: 0 0 6px 0.5px var(--accent-colour);
+}
 
 
+
+
+.about-tech {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	height: min-content;
+	width: 40%;
+	gap: 15px;
+	border-radius: 3px;
+	padding: 25px;
+
+	border: solid 0.5px rgba(81, 255, 162, 0.75);
+	background-color: #0f1f3a;
+}
+.about-tech > .mini-title {
+	padding-bottom: 10px;
+	border-bottom: solid 0.5px rgba(136, 146, 176, 0.3);
+}
+/* .about-tech::before {
+	display: block;
+	position: absolute;
+	top: -20px;
+	left: -20px;
+	width: 10px;
+	height: 10px;
+	z-index: 2;
+	outline: solid 1px red;
+
+	border-top: 1.5px var(--accent-colour);
+	border-left: 1.5px var(--accent-colour);
+} */
+
+#about-tech-current {
+	padding-bottom: 20px;
+	border-bottom: solid 0.5px rgba(136, 146, 176, 0.3);
+}
+#about-tech-current > span, #about-tech-experience > span {
+	
+
+	font-family: "JetBrains Mono", monospace;
+	font-size: 12px;
+	font-weight: 100;
+	color: var(--header-colour);
+}
+#about-tech-current > div, #about-tech-experience > div {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto;
+	gap: 10px;
+}
+
+.tech-box {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 80px;
+	margin-top: 10px;
+
+	border: solid 0.5px rgba(136, 146, 176, 0.3);
+	border-radius: 3px;
+	background-color: var(--primary-bg-colour);
+	transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+.tech-box > img {
+	height: 40px;
+	width: min-content;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-top-left-radius: 3px;
+	content: url(./resources/dog.jpeg);
+}
+.tech-box > span {
+	font-family: "JetBrains Mono", monospace;
+	font-size: 10px;
+	font-weight: 100;
+	color: var(--text-colour);
+	transition: color 0.3s ease;
+}
+.tech-box:hover {
+	border: solid 0.5px var(--accent-colour);
+	box-shadow: inset 0 0 40px 40px rgba(81, 255, 162, 0.1);
+}
+.tech-box:hover span {
+	color: var(--accent-colour);
+}
 
 
 
