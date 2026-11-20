@@ -2,23 +2,24 @@ headerAnimation();
 sectionLoadAnimation();
 projectsLoadAnimation();
 featureProjLoadAnimation();
+mobileNavFunction();
 
 
 // DOM - Header dynamics
 function headerAnimation () {
-    const header = document.querySelector('header');
+    const header = document.querySelector("header");
     let lastScrollY = window.scrollY;
 
-    window.addEventListener('scroll', () => {
+    window.addEventListener("scroll", () => {
         const currentScrollY = window.scrollY;
 
         if (currentScrollY <= 0) {
-            header.classList.remove('header-hidden', 'header-scrolled');
+            header.classList.remove("header-hidden", "header-scrolled");
         } else if (currentScrollY > lastScrollY) {
-            header.classList.add('header-hidden');
+            header.classList.add("header-hidden");
         } else {
-            header.classList.remove('header-hidden');
-            header.classList.add('header-scrolled');
+            header.classList.remove("header-hidden");
+            header.classList.add("header-scrolled");
         };
         lastScrollY = currentScrollY;
     });
@@ -39,7 +40,7 @@ function sectionLoadAnimation() {
         });
     }, {
         root: null,
-        rootMargin: '0px',
+        rootMargin: "0px",
         threshold: 0.15
     });
 
@@ -58,12 +59,12 @@ function projectsLoadAnimation() {
         });
     }, {
         root: null,
-        rootMargin: '0px',
+        rootMargin: "0px",
         threshold: 0.15
     });
 
     cards.forEach((card, index) => {
-        card.style.setProperty('--card-index', index);
+        card.style.setProperty("--card-index", index);
         observer.observe(card);
     });
 };
@@ -80,13 +81,41 @@ function featureProjLoadAnimation() {
         });
     }, {
         root: null,
-        rootMargin: '0px',
+        rootMargin: "0px",
         threshold: 0.15
     });
 
     wrappers.forEach((card, index) => {
-        card.style.setProperty('--featured-index', index);
+        card.style.setProperty("--featured-index", index);
         observer.observe(card);
     });
 
+};
+
+function mobileNavFunction() {
+    const hamburgerBtn = document.querySelector(".mobile-nav-btn");
+    const navElem = document.querySelector(".mobile-nav");
+    const navBackdrop = document.querySelector(".mobile-nav-backdrop");
+
+    function toggleMenu(forceState) {
+        const isOpen = typeof forceState === "boolean"
+        ? forceState
+        : !navElem.classList.contains("is-open");
+        navElem.classList.toggle("is-open", isOpen);
+        navBackdrop.classList.toggle("is-open", isOpen);
+        document.body.style.overflow = isOpen ? "hidden" : "";
+    };
+
+    hamburgerBtn?.addEventListener("click", () => toggleMenu());
+    navBackdrop?.addEventListener("click", () => toggleMenu(false));
+
+    navElem?.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => toggleMenu(false));
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && navElem?.classList.contains("is-open")) {
+            toggleMenu(false);
+        };
+    });
 };
