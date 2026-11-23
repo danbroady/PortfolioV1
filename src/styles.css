@@ -657,14 +657,9 @@ header {
 	background-color: var(--primary-bg-colour);
 	transition: border 0.3s ease, box-shadow 0.3s ease;
 }
-.tech-box > img {
+.tech-box > .icons {
 	height: 35px;
 	width: 35px;
-	background-size: contain;
-	background-position: center;
-	background-repeat: no-repeat;
-	border-top-left-radius: 3px;
-	content: url(./resources/dog.jpeg);
 }
 .tech-box > span {
 	font-family: "JetBrains Mono", monospace;
@@ -699,7 +694,7 @@ header {
 		font-size: 14px;
 	}
 	.about-content p {
-		font-size: 16px;
+		font-size: 15px;
 	}
 	.about-tech .mini-title {
 		font-size: 14px;
@@ -852,7 +847,7 @@ header {
 	width: 55%;
 
 	background-size: cover;
-	background-position: center;
+	background-position: left;
 	background-repeat: no-repeat;
 	border-top-left-radius: 3px;
 
@@ -977,6 +972,7 @@ header {
 		height: 100%;
 		border-top-right-radius: 3px;
 		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+		background-position: center;
 	}
 	.feature-card-wrapper:hover .featured-img {
 		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
@@ -1016,19 +1012,21 @@ header {
 		gap: 20px;
 	}
 
+	#feature-card-3 .featured-img {
+		background-position: left;
+	}
 }
-
-
 
 
 #feature-card-1 .featured-img {
-	background-image: url(./resources/dog.jpeg);
+	background-image: url(./resources/ft-proj-battleship.png);
 }
 #feature-card-2 .featured-img {
-	background-image: url();
+	background-image: url(./resources/ft-proj-weather.png);
+	background-position: center;
 }
 #feature-card-3 .featured-img {
-	background-image: url();
+	background-image: url(./resources/ft-proj-todo.png);
 }
 
 
@@ -1185,10 +1183,27 @@ header {
 
 
 #project-card-1 .project-img-container {
-	background-image: url(./resources/dog.jpeg);
+	background-image: url(./resources/proj-restaurant.png);
+
 }
 #project-card-2 .project-img-container {
-	background-image: url(./resources/dog.jpeg);
+	background-image: url(./resources/proj-library.png);
+	background-position: top;
+}
+#project-card-3 .project-img-container {
+	background-image: url(./resources/proj-signup.png);
+}
+#project-card-4 .project-img-container {
+	background-image: url(./resources/proj-etchsketch.png);
+	background-position: top;
+}
+#project-card-5 .project-img-container {
+	background-image: url(./resources/proj-dashboard.png);
+	background-position: left;
+}
+#project-card-6 .project-img-container {
+	background-image: url(./resources/proj-calculator.png);
+	background-position: top;
 }
 
 
