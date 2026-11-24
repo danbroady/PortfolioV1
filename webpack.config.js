@@ -9,10 +9,10 @@ export default {
         // second: "./src/second-script.js"
     },
     output: {
-        filename: "./main.js",
+        filename: "main.js",
         path: path.resolve(import.meta.dirname, "dist"),
         clean: true,
-        publicPath: "",
+        publicPath: "./",
     },
     devtool: "eval-source-map",
     devServer: {
