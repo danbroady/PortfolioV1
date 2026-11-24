@@ -658,8 +658,9 @@ header {
 	transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 .tech-box > .icons {
-	height: 35px;
-	width: 35px;
+	height: 32px;
+	width: 32px;
+	transition: transform 0.3s ease;
 }
 .tech-box > span {
 	font-family: "JetBrains Mono", monospace;
@@ -672,7 +673,10 @@ header {
 }
 .tech-box:hover {
 	border: solid 0.5px var(--accent-colour);
-	box-shadow: inset 0 0 40px 40px rgba(81, 255, 162, 0.075), 0 0 10px 8px rgba(81, 255, 162, 0.075);;
+	box-shadow: inset 0 0 40px 40px rgba(81, 255, 162, 0.075), 0 0 10px 8px rgba(81, 255, 162, 0.075)
+}
+.tech-box:hover > .icons {
+	transform: scale(1.1);
 }
 .tech-box:hover span {
 	color: var(--accent-colour);
@@ -1096,7 +1100,7 @@ header {
 	position: absolute;
 	inset: 0;
 	backdrop-filter: blur(5px);
-	transition: 0.3s;
+	transition: backdrop-filter 0.5s ease;
 
 	border-top-left-radius: 3px;
 	border-top-right-radius: 3px;
@@ -1287,7 +1291,7 @@ header {
 	font-family: "Inter", sans-serif;
 	font-size: 15px;
 	font-weight: 300;
-	color: var(--text-colour);
+	color: var(--header-colour);
 }
 #contact-location > * {
 	align-self: center;

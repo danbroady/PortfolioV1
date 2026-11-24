@@ -6,6 +6,13 @@ projectsLoadAnimation();
 featureProjLoadAnimation();
 mobileNavFunction();
 
+// CV button link
+import cvUrl from "./resources/CV.pdf";
+
+const cvBtn = document.querySelector("#contact-btn");
+if (cvBtn) {
+    cvBtn.href = cvUrl;
+}
 
 // DOM - Header dynamics
 function headerAnimation () {
@@ -93,6 +100,8 @@ function featureProjLoadAnimation() {
     });
 
 };
+
+// Mobile side-nav functionality
 
 function mobileNavFunction() {
     const hamburgerBtn = document.querySelector(".mobile-nav-btn");
