@@ -6,7 +6,7 @@
   </a>
 </p> -->
 
-> This is my personal developer portfolio built as an expanded take on The Odin Project’s 'Homepage' assignment. Rather than stopping at a basic landing page, I've served a central hub to showcase my background, transition into back to software engineering, and web development projects. It features section navigation, featured projects with architecture notes, a broader project archive, and direct contact/CV links.
+> This is my personal developer portfolio built as an expanded take on The Odin Project’s 'Homepage' assignment. Rather than stopping at a basic landing page, I've served a central hub to showcase my background, transition back into software engineering, and web development projects. It features section navigation, featured projects with architecture notes, a broader project archive, and direct contact/CV links.
 
 ### 💻 [GH Repo](https://github.com/danbroady/DB-Portfolio-V1-TOP)
 
