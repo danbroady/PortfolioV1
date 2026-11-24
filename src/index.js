@@ -1,3 +1,5 @@
+import "./styles.css";
+
 headerAnimation();
 sectionLoadAnimation();
 projectsLoadAnimation();
